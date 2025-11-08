@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-blue-600">MyBlog</h1>
+      <ul class="flex space-x-6 text-gray-700">
+        <li><a href="/" class="hover:text-blue-600">Home</a></li>
+        <li><a href="/about" class="hover:text-blue-600">About</a></li>
+        <li><a href="/login" class="hover:text-blue-600">Login</a></li>
+        <li><a href="/register" class="hover:text-blue-600">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-100 py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-extrabold mb-4">Welcome to My Blog</h2>
+      <p class="text-lg text-gray-700 max-w-xl mx-auto">
+        Explore thoughts, stories, and ideas on technology, lifestyle, and more.
+      </p>
+      <a href="#posts" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+        Read Posts
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Post -->
+  <section class="container mx-auto py-12 px-4">
+    <h3 class="text-2xl font-semibold mb-6 border-b pb-2">Featured Post</h3>
+    <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row gap-2">
+      <img src="https://plus.unsplash.com/premium_photo-1720744786849-a7412d24ffbf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxvZ2dpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600" class="w-full md:w-1/2 object-cover rounded-2xl" alt="Featured Image">
+      <div class="p-6">
+        <h4 class="text-xl font-bold mb-2">How to Start Blogging</h4>
+        <p class="text-gray-700 mb-4">
+          Learn the essentials of blogging and how to share your stories with the world effectively.
+        </p>
+          <a href="" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Posts -->
+  <section id="posts" class="container mx-auto py-12 px-4">
+    <h3 class="text-2xl font-semibold mb-6 border-b pb-2">Recent Posts</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+     
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 mt-12  st w-full bottom-0">
+    <div class="container mx-auto text-center">
+       <p>&copy; <%= new Date().getFullYear() %> MyBlog. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+  </body>
+</html>
