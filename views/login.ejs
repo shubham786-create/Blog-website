@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | My Blog</title> 
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md sticky top-0">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-blue-600">MyBlog</a>
+   
+    </div>
+  </nav>
+
+  <!-- Login Form -->
+  <section class="flex justify-center items-center min-h-screen px-4">
+    <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full border border-gray-200">
+      <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">Login</h2>
+      
+    
+
+      <form action="/loginUser" method="POST" class="space-y-5">
+        <div>
+          <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+          <input type="text" id="username" name="username" 
+                 class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" 
+                 placeholder="Enter your username" required>
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <input type="password" id="password" name="password" 
+                 class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" 
+                 placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit" 
+                class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition font-semibold">
+          Login
+        </button>
+      </form>
+
+      <p class="text-sm text-gray-600 text-center mt-6">
+        Don't have an account? 
+        <a href="/register" class="text-blue-600 hover:underline">Register here</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 text-center py-6 mt-12">
+    <p>© <%= new Date().getFullYear() %> MyBlog. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

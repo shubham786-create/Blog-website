@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= user.fullname || user.username %> | Profile</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+</head>
 <body class="bg-gray-50 text-gray-900">
 
   <!-- Navbar -->
@@ -17,57 +19,96 @@
         <li><a href="/home" class="hover:text-blue-600">Home</a></li>
         <li><a href="/about" class="hover:text-blue-600">About</a></li>
         <li><a href="/contact" class="hover:text-blue-600">Contact</a></li>
-        <li><a href="/profile" class="hover:text-blue-600">Profile</a></li>
-        <li class="w-24 h-24 rounded-full overflow-hidden border-2 border-blue-800"><a href="/profile" class="hover:text-blue-600"><img class="w-full" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0OEBAPDg4PDRAPDQ0NDw0PDQ8NDw8NFREWFhUSExMYHiggGBolGxMVITEhJSkrLi4uFx8zODMsNygtLjcBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAAAwQFAgEH/8QAMBABAQABAgQFAgQGAwAAAAAAAAECAxEEMUFxBRIhUYEysSJhksFCUqHR8PFygpH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A+ogAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7mlneWOX6aDgd3Rz/AJcv01xf86AAAAAAAAAAAAAAAAAAAAAAAA608LldseYPMcbbtPW+y9oeH9c7/wBYs8Pw+OE9OfW+6eAj09HHHlJPhJsAGzjPTxvOS/DsBR1vD5fXG7X26KGphcbtlNq3UWroY5zazt+QMUSa+lcLtfi+8RgAAAAAAAAAAAAAAAAAANXgdDy4736r/SKHCafmzk6T1rYgPQAAAAAAAQcVoTPHbrOV/Zj2N+srxDT2y3nLL1+QVQAAAAAAAAAAAAAAAAAXvC8fqvaNFS8L+nLvPsugAAAAAAAAKXieP4Zfarqr4j9F7wGUAAAAAAAAAAAAAAAAAC/4Zl9U7VoMbg9Ty5y9L6VswAAAAAAAABT8Ty/DJ75LjK8Q1N8tt95j6fIKoAAAAAAAAAAAAAAAAADV4HiPPjtfqx59vdlOtLUuN3nMG6IOH18c56c+sTgAAAAAj1tXHCb34nWg54rWmGO/W+knvWNbv63rzv5pNfWud3vxPZGAAAAAAAAAAAAAAAAAAAAD3HKy7y7Ve0ePnLOfMUAG5p6mOX05S9r+ztgb/wCcnc1s5yyy/wDaDcc554487J3uzGuvqfz5fqqO0GjrcfjPTGb/AJ9FDU1Lld7d3IAAAAAAAAAAAAAAAAAAAAACbR4bPPlNp73kCF7jLeU37erT0uBwnP8AF9lnHGTlJAZGPC6l5YX52n3dzgdT2k+Y1dnoMq8Bqe0vyjy4XUn8F+Nr9my8BhZY2c5Z3mzxvXGXnJVbV4LDLlPLfyBlCxrcJnj08095+6uAAAAAAAAAAAAAAAAA9xxtu0m99nunjbdpN61eF4aYT3vWgi4fgpPXP1vt0i5I9AAAAAAAAAebKvEcHMvWbY3+lWwGFqYXG7WbX7uWzr6Ezm159KydbTuN2v8AuA4AAAAAAAAAAAABb8O0fNfNeWPLuC1wXD+Sb3nfXt+S0QAAAAAAAAAAAAAQcXoTPHbrzlTgMHKbWy+m3R4v+JaPLOdsv7qAAAAAAAAAAAEbXD6flxk/L17svg8d88e+7YgPQAAAAAAAAAAAAAAAc6mMssvKzZiamHltl5y7N2srxHHbPvICqAAAAAAAAACbhMts8e7YjBl9m1w2rM8ZZ89wSgAAAAAAAAAAAAAAAMnxC/j7ST5aernMZbejF1M7lbb1u4OQAAAAAAAAAF/wn+Pvj9noC+AAAAAAAAAAAAAAACn4p9E/54sz+9AAAAAAAH//2Q=="/></a></li>
+        <li class="w-32 text-center rounded-2xl overflow-hidden p-2 bg-blue-800"><a class="w-full text-white" href="/logout">Log out</a></li>    
 
       </ul>
     
   </nav>
 
-  <!-- Hero Section -->
-  <section class="bg-blue-100 py-16">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-extrabold mb-4">Welcome to My Blog</h2>
-      <p class="text-lg text-gray-700 max-w-xl mx-auto">
-        Explore thoughts, stories, and ideas on technology, lifestyle, and more.
-      </p>
-      <a href="#posts" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-        Read Posts
-      </a>
-    </div>
-  </section>
+  <!-- Profile Section -->
+  <main class="max-w-full mt-10 px-6  flex gap-10 min-h-fit " id="main">
 
-  <!-- Featured Post -->
-  <section class="container mx-auto py-12 px-4">
-    <h3 class="text-2xl font-semibold mb-6 border-b pb-2">Featured Post</h3>
-    <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row gap-2">
-      <img src="https://plus.unsplash.com/premium_photo-1720744786849-a7412d24ffbf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxvZ2dpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600" class="w-full md:w-1/2 object-cover rounded-2xl" alt="Featured Image">
-      <div class="p-6">
-        <h4 class="text-xl font-bold mb-2">How to Start Blogging</h4>
-        <p class="text-gray-700 mb-4">
-          Learn the essentials of blogging and how to share your stories with the world effectively.
-        </p>
-          <a href="" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+    <!-- User Info -->
+    <div class="bg-blue-100 shadow rounded-xl p-6 justify-center flex flex-col items-center gap-6 w-[40%]">
+      <div class="w-56 h-56 rounded-full bg-white border-2 border-blue-700 flex justify-center items-center text-6xl font-bold text-gray-500">
+        <%= (user.fullname || user.username).charAt(0).toUpperCase() %>
       </div>
-    </div>
-  </section>
-
-  <!-- Recent Posts -->
-  <section id="posts" class="container mx-auto py-12 px-4">
-    <h3 class="text-2xl font-semibold mb-6 border-b pb-2">Recent Posts</h3>
-    <div class="grid md:grid-cols-3 gap-6">
-     
+      <div class="flex flex-col items-center">
+        <h1 class="text-2xl font-semibold"><%= user.fullname || user.username %></h1>
+        <p class="text-gray-500">@<%= user.username %></p>
+        <p class="text-gray-600"><%= user.email %></p>
+        <p class="font-semibold">followers . following</p>
+      </div>
+      <div class="flex justify-center gap-2">
+        <button class="bg-blue-700 p-2 rounded-2xl text-white cursor-pointer">Share</button>
+        <button class="bg-blue-700 p-2 rounded-2xl text-white cursor-pointer">Edit profile</button>
+      </div>
+      <p class="text-gray-600 font-semibold">Member Since </p>
       
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 mt-12  st w-full bottom-0">
-    <div class="container mx-auto text-center">
-       <p>&copy; <%= new Date().getFullYear() %> MyBlog. All Rights Reserved.</p>
+    <!-- User Posts -->
+    <section class=" w-[55%]   ">
+      <h2 class="text-2xl font-bold bg-blue-100 rounded-xl shadow-2xl shadow-gray-200 text-black w-full  p-4 uppercase">Your Posts</h2>
+      <div class="mt-4 flex flex-wrap gap-2">
+     <% if (user.posts.length > 0) { %>
+  <% user.posts.forEach(function(element) { %>
+    <div class=" w-[32%] min-h-84 shadow-2xl shadow-gray-200 bg-blue-100 rounded-xl flex flex-col  ">
+      <img class="rounded-2xl w-full h-50 object-cover" src="<%= element.image %>" />
+      <h1 class="text-xl font-semibold p-2 mt-5"><%= element.title %></h1>
+      <p class="text-gray-700 p-2 overflow-y-auto"><%= element.content %></p>
     </div>
+  <% }); %>
+<% } %>
+
+        <div class=" w-[32%] h-84 shadow-2xl shadow-gray-200 bg-blue-100 rounded-xl flex flex-col items-center justify-center ">
+           <button id="imageSelector" class="cursor-pointer"><img src="https://cdn-icons-png.flaticon.com/128/1828/1828919.png" class="w-16 h-16"/></button>
+           <p>Upload a new blog</p>
+            <input type="file" name="file" hidden id="previewInput" accept="image/*"/>
+        </div>
+      </div>
+    </section>
+  </main>
+
+   <section class=" w-[80%] mx-auto bg-blue-100 m-10 rounded-2xl shadow-2xl shadow-gray-400" id="popup" style="display: none;">
+    <form action="/upload" method="post" enctype="multipart/form-data" class="flex flex-col  gap-3 w-full mx-auto">
+      <img class="w-[60%] mx-auto rounded-2xl" src="" id="preview" style="display: none;"/>
+      <input type="file" name="multerImage" id="realInput" hidden required/>
+      <input type="text" name="title" id="title" placeholder="Caption" class="w-[60%] mx-auto p-4 my-2 outline-none" required/>
+      <textarea name="content" id="content" class="w-[60%] mx-auto p-4 resize-none h-auto outline-none" required placeholder="Description"></textarea>
+      <div class="flex justify-center items-center gap-4">
+      <button type="submit" id="uploadBtn" class="bg-blue-700 p-2 text-white text-xl rounded-2xl m-2 font-semibold w-20 cursor-pointer ">upload</button>
+      <button id="cancel" class="bg-blue-700 p-2 text-white text-xl rounded-2xl m-2 font-semibold w-20 cursor-pointer">Cancel</button>
+      </div>
+    </form>
+   </section>
+  <footer class="text-center text-gray-500 py-10 mt-10">
+    © <%= new Date().getFullYear() %> MyBlog. All rights reserved.
   </footer>
 
+ 
+<script>
+  document.querySelector("#imageSelector").addEventListener("click",(e)=>{
+    document.querySelector("#previewInput").click();
+  });
+
+   document.querySelector("#previewInput").addEventListener("change",(e)=>{
+           const file=e.target.files[0];
+           if(file){
+            const reader=new FileReader();
+            reader.onload=function(ev){
+             document.querySelector("#preview").src=ev.target.result;
+              document.querySelector("#preview").style.display="block"
+              document.querySelector("#main").classList.add('hidden');
+              document.querySelector('#popup').style.display="block";
+            }
+            reader.readAsDataURL(file);
+            const dataTransfer=new DataTransfer();
+            dataTransfer.items.add(file);
+            document.querySelector("#realInput").files=dataTransfer.files;
+           }
+   })
+ 
+</script>
 </body>
-  </body>
 </html>
